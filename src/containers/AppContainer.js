@@ -10,7 +10,7 @@ import * as config from '../config';
 
 import * as actionCreators from '../actions/matcher';
 
-// import MatchButton from '../components/buttons/MatchButton';
+import MatchButton from '../components/buttons/MatchButton';
 // import MatchList from '../components/match/MatchList';
 import PlayerList from '../components/player/PlayerList';
 
@@ -26,10 +26,10 @@ class App extends Component {
                 Matcher
             </Text>
             <PlayerList {...this.props} />
+            <MatchButton {...this.props} />
         </View>
     };
 };
-            // <MatchButton {...this.props} />
             // <MatchList {...this.props} />
 
 const styles = StyleSheet.create({

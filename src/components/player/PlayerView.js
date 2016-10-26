@@ -16,7 +16,9 @@ export default class PlayerView extends Component {
                 {this.props.name} - {this.props.rating}
             </Text>
             <TouchableHighlight onPress={() => this.props.match(this.props.players, this.props.id)}>
-                <Text>Match</Text>
+                <Text>
+                    Match
+                </Text>
             </TouchableHighlight>
         </View>
     };
