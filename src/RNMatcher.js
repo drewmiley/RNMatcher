@@ -4,26 +4,26 @@ import {
   Text,
   View
 } from 'react-native';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import * as actions from './constants/actions';
+
+import reducer from './reducers/matcher';
+
+import AppContainer from './containers/AppContainer';
+
+const store = createStore(reducer);
+
+store.dispatch({
+    type: actions.SET_STATE,
+    state: {}
+});
 
 export default class RNMatcher extends Component {
     render() {
-        return <View style={styles.container}>
-            <Text>
-                Matcher
-            </Text>
-            <Text>
-                Press Cmd+R to reload,{'\n'}
-                Cmd+D or shake for dev menu
-            </Text>
-        </View>
+        return <Provider store={store}>
+            <AppContainer />
+        </Provider>
     };
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
