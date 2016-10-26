@@ -7,7 +7,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
     "immutable": "^3.8.1",
     "react": "15.3.2",
     "react-native": "0.36.0",
