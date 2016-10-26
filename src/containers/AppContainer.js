@@ -6,9 +6,29 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
+import * as config from '../config';
+
 import * as actionCreators from '../actions/matcher';
 
+// import MatchButton from '../components/buttons/MatchButton';
+// import MatchList from '../components/match/MatchList';
+// import PlayerList from '../components/player/PlayerList';
+
 class App extends Component {
+    componentDidMount() {
+        if (config.playerFeed) {
+            config.playerFeed(this.props.addPlayer);
+        };
+    };
+    // render() {
+    //     return <div>
+    //         <section className="matcher-app-container">
+    //             <PlayerList {...this.props} />
+    //             <MatchButton {...this.props} />
+    //             <MatchList {...this.props} />
+    //         </section>
+    //     </div>
+    // }
     render() {
         return <View style={styles.container}>
             <Text>
@@ -31,8 +51,13 @@ const styles = StyleSheet.create({
     }
 });
 
+actionCreators.matcher(config.matcher);
+
 const mapStateToProps = state => {
-    return {};
+    return {
+        matches: state.get('matches'),
+        players: state.get('players')
+    };
 }
 
 export default AppContainer = connect(mapStateToProps, actionCreators)(App);

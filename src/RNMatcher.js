@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+
+import * as config from './config';
 
 import * as actions from './constants/actions';
 
@@ -17,7 +14,7 @@ const store = createStore(reducer);
 
 store.dispatch({
     type: actions.SET_STATE,
-    state: {}
+    state: config.initialState
 });
 
 export default class RNMatcher extends Component {
