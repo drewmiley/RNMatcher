@@ -7,7 +7,7 @@ import {
 export default class MatchButton extends Component {
     constructor(props) {
         super(props);
-        this.shouldComponentUpdate = function(nextProps, nextState) {
+        this.shouldComponentUpdate = (nextProps, nextState) => {
             return this.props.players !== nextProps.players;
         };
     };

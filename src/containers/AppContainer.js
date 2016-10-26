@@ -11,7 +11,7 @@ import * as config from '../config';
 import * as actionCreators from '../actions/matcher';
 
 import MatchButton from '../components/buttons/MatchButton';
-// import MatchList from '../components/match/MatchList';
+import MatchList from '../components/match/MatchList';
 import PlayerList from '../components/player/PlayerList';
 
 class App extends Component {
@@ -27,10 +27,10 @@ class App extends Component {
             </Text>
             <PlayerList {...this.props} />
             <MatchButton {...this.props} />
+            <MatchList {...this.props} />
         </View>
     };
 };
-            // <MatchList {...this.props} />
 
 const styles = StyleSheet.create({
     container: {

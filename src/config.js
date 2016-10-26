@@ -18,5 +18,4 @@ export const initialState = {
 
 export const matcher = DummyMatcher;
 
-// export const playerFeed = RandomPlayerFeed;
-export const playerFeed = null;
+export const playerFeed = RandomPlayerFeed;
